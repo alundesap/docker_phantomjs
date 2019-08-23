@@ -27,7 +27,7 @@ RUN set -x  \
  && mv /tmp/phantomjs/bin/phantomjs /usr/local/bin \
  && curl -Lo /tmp/dumb-init.deb https://github.com/Yelp/dumb-init/releases/download/v1.1.3/dumb-init_1.1.3_amd64.deb \
  && dpkg -i /tmp/dumb-init.deb \
- && curl -Lo /tmp.geckodriver.tar.gz https://github.com/mozilla/geckodriver/releases/download/v0.14.0/geckodriver-v0.14.0-linux64.tar.gz \
+ && curl -Lo /tmp/geckodriver.tar.gz https://github.com/mozilla/geckodriver/releases/download/v0.14.0/geckodriver-v0.14.0-linux64.tar.gz \
  && tar -C /opt -xzf /tmp/geckodriver.tar.gz \
  && chmod 755 /opt/geckodriver \
  && ln -fs /opt/geckodriver /usr/bin/geckodriver \
