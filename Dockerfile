@@ -30,6 +30,11 @@ RUN set -x  \
  && apt-get purge --auto-remove -y \
         curl \
  && apt-get clean \
+ && curl -Lo /tmp.geckodriver.tar.gz https://github.com/mozilla/geckodriver/releases/download/v0.14.0/geckodriver-v0.14.0-linux64.tar.gz \
+ && tar -C /opt -xzf /tmp/geckodriver.tar.gz \
+ && chmod 755 /opt/geckodriver \
+ && ln -fs /opt/geckodriver /usr/bin/geckodriver \
+ && ln -fs /opt/geckodriver /usr/local/bin/geckodriver \
  && rm -rf /tmp/* /var/lib/apt/lists/* \
  && useradd --system --uid 52379 -m --shell /usr/sbin/nologin phantomjs \
  && su phantomjs -s /bin/sh -c "phantomjs --version"
