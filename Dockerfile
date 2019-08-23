@@ -33,7 +33,7 @@ RUN set -x  \
  && rm -rf /tmp/* /var/lib/apt/lists/* \
  && useradd --system --uid 52379 -m --shell /usr/sbin/nologin phantomjs \
  && su phantomjs -s /bin/sh -c "phantomjs --version" \
- && su phantomjs -s /bin/sh -c "phantomjs --webdriver=8080"
+ && su phantomjs -s /bin/sh -c "phantomjs --webdriver=8080 &"
 USER phantomjs
 
 EXPOSE 8080
